@@ -12,5 +12,3 @@ create a config.json
     "clientID": "bot ID",
     "guildID":"Server Id"
 }
-
-create a file named audio and drop your .mp3 there
