@@ -29,10 +29,18 @@ function isFapy(user) {
 }
 
 const audios = [
-	{ audio: './audio/audioName.mp3', volume: 1 },
-	{ audio: './audio/audioName.mp3', volume: 1 },
-	{ audio: './audio/audioName.mp3', volume: 1 },
-	{ audio: './audio/audioName.mp3', volume: 1 },
+	{ audio: './audio/ainn-cafezinho.mp3', volume: 1 },
+	{ audio: './audio/aughhhh.mp3', volume: 1 },
+	//{ audio: './audio/cala-boca-bando-de-corno.mp3', volume: .4},
+	{ audio: './audio/sinto-cheiro-de-xoxota.mp3', volume: 1 },
+	{ audio: './audio/cavalo.mp3', volume: .5 },
+	{ audio: './audio/tema-triste-toguro.mp3', volume: 1 },
+	{ audio: './audio/bora-filho-do-bill.mp3', volume: 1 },
+	{ audio: './audio/bora-mae-do-bill.mp3', volume: 1 },
+	{ audio: './audio/bora-bill.mp3', volume: 1 },
+	{ audio: './audio/bora-mulher-do-bill.mp3', volume: 1 },
+	{ audio: './audio/batida-de-porta-troll.mp3', volume: 1 },
+	{ audio: './audio/ele-gosta.mp3', volume: 1 },
 ]
 
 let isRunning = false;
@@ -61,7 +69,7 @@ function connectBot(voiceState) {
 			});
 			
 			player.on(AudioPlayerStatus.Idle, () => {
-				console.log('Bye');
+				console.log('gone');
 				disconnectBot(connection);
 			});
 
@@ -74,12 +82,14 @@ function connectBot(voiceState) {
 			// Subscribe the connection to the audio player (will play audio on the voice connection)
 			const subscription = connection.subscribe(player);
 
-			let rndTime = (getRandomTime(5, 40) * 1000 * 60)
+			let rndTime = (getRandomTime(6, 50) * 1000 * 60)
 			setTimeout(()=>{
 				isRunning = false;
 				connectBot(voiceState)
 			}, rndTime)
-			console.log(rndTime / 60000)
+			console.log(`-----------------------------------------------`)
+			console.log(`next entry in ${rndTime / 60000} minute(s)`)
+			console.log(`-----------------------------------------------`)
 	}
 }
 function disconnectBot(connection) {
@@ -100,10 +110,10 @@ client.on('voiceStateUpdate', (oldState, newState) => {
 
 	}
 	//bot enter the chat when i mute or unmute
-	if ((oldState.selfMute) && (newState.selfMute)) {
-		connectBot(newState)
+	// if ((oldState.selfMute) && (newState.selfMute)) {
+	// 	connectBot(newState)
 
-	}
+	// }
 
 	if (oldState && !newState) {
 		disconnectBot(oldState)
@@ -147,4 +157,3 @@ async function main() {
 
 client.login(token);
 main();
-
