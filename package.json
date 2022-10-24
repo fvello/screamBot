@@ -4,7 +4,8 @@
   "description": "A bot that sometimes enters a channel and \"scream\" aaaaaaaaawwwwwwwwwwwwwww",
   "main": "index.js",
   "scripts": {
-    "bot": "nodemon index.js"
+    "botdev": "nodemon index.js",
+    "bot": "index.js"
   },
   "repository": {
     "type": "git",
