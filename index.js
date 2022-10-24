@@ -29,12 +29,10 @@ function isFapy(user) {
 }
 
 const audios = [
-	{ audio: './audio/ainn-cafezinho.mp3', volume: 1 },
-	{ audio: './audio/aughhhh.mp3', volume: 1 },
-	//{ audio: './audio/cala-boca-bando-de-corno.mp3', volume: .4},
-	{ audio: './audio/sinto-cheiro-de-xoxota.mp3', volume: 1 },
-	{ audio: './audio/cavalo.mp3', volume: .5 },
-	{ audio: './audio/ele-gosta.mp3', volume: 1 },
+	{ audio: './audio/audioName.mp3', volume: 1 },
+	{ audio: './audio/audioName.mp3', volume: 1 },
+	{ audio: './audio/audioName.mp3', volume: 1 },
+	{ audio: './audio/audioName.mp3', volume: 1 },
 ]
 
 let isRunning = false;
